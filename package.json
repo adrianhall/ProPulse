@@ -1,0 +1,10 @@
+{
+  "name": "propulse",
+  "version": "1.0.0",
+  "description": "ProPulse Modular Monolith with Aspire AppHost",
+  "scripts": {
+    "start": "dotnet run --project ./aspire/ProPulse.AppHost/ProPulse.AppHost.csproj"
+  },
+  "author": "",
+  "license": "MIT"
+}

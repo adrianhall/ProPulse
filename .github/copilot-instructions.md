@@ -35,6 +35,7 @@ I prefer to use the following technologies:
 
 # Maintaining, building and testing the project.
 
+* Use PowerShell for command line scripts.
 * Use `dotnet` commands to alter the solution and add packages to the projects.
     * Always attempt to install the latest version of the package before reverting to a specific version.
 * Use `npm run build` to build the application.
