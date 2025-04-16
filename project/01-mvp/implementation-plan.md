@@ -31,15 +31,19 @@ This timeline focuses solely on the development tasks required to build the MVP 
 
 *   **Goal:** Implement EF Core persistence for Articles, build core Article API endpoints, and set up integration testing.
 *   **Tasks:**
-    *   Task 2.1: Configure EF Core DbContext in `ProPulse.DataModel` for `Article`, `Attachment`, and Identity tables, including relationships and automatic `CreatedAt`/`UpdatedAt` value generation (e.g., via interceptors or value converters). (1.5 days)
-    *   Task 2.2: Create initial DbUp SQL migration scripts for the database schema (including tables for Articles, Attachments, and Identity). (1 day)
-    *   Task 2.3: Create `ProPulse.DbInitializer` console application project. Configure it to run DbUp migrations against the SQL Server database defined in Aspire. (1 day)
+    *   Task 2.1: Configure EF Core DbContext in `ProPulse.DataModel` for `Article`, `Attachment`, and Identity tables, including relationships. (1.5 days)
+    *   Task 2.2: Create `ProPulse.DataModel.Migrations` class library project and initial DbUp SQL migration scripts for the database schema (including tables for Articles, Attachments, and Identity, triggers for audit properties, and indices). (1 day)
+    *   Task 2.3: Create `ProPulse.Initializer` console application project. Configure it to run DbUp migrations against the SQL Server database defined in Aspire. (1 day)
     *   Task 2.4: Implement `POST /api/articles` endpoint (Create Article - map basic fields, associate with authenticated AuthorId). (1.5 days)
     *   Task 2.5: Implement `GET /api/articles/{id}` endpoint (Retrieve Article by ID). (1 day)
     *   Task 2.6: Implement `GET /api/articles` endpoint (List Articles - basic retrieval). (1 day)
     *   Task 2.7: Implement `PUT /api/articles/{id}` endpoint (Update Article - basic fields). (1.5 days)
     *   Task 2.8: Implement `DELETE /api/articles/{id}` endpoint (Delete Article). (1 day)
-    *   Task 2.9: Add basic integration tests for Article API endpoints using `WebApplicationFactory` and TestContainers (SQL Server). Ensure tests can trigger schema initialization. (2 days)
+    *   Task 2.9: Create `ProPulseTests.Common` project.  Create a class fixture that sets up a WebApplicationFactory with Azurite and SqlServer Testcontainers.  
+    *   Task 2.10: Create `ProPulse.DataModel.Migrations.Tests` project; write database migration tests to ensure tables and triggers are created.
+    *   Task 2.11: Add basic integration tests for Article API endpoints using class fixture. Ensure tests can trigger schema initialization using DbUp migrations. (2 days)
+    *   Task 2.12: Integrate the DbUp migrations script and web projects into Aspire AppHost with proper references.
+    *   Task 2.13: Create `ProPulse.Initializer.Tests` project; Write xUnit tests to cover the database initialization via the initializer.
 
 ---
 
